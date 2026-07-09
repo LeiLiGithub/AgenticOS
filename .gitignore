@@ -1,0 +1,21 @@
+# Local editor state
+.obsidian/
+
+# Operating-system and editor artifacts
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.tmp
+*.bak
+
+# Local runtime environments and caches
+__pycache__/
+.venv/
+venv/
+
+# Credentials and private keys
+.env
+.env.*
+*.key
+*.pem
