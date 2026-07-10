@@ -214,14 +214,14 @@ LLM 真正强的地方，是通过上下文建模把静态 token embedding 变�
 
 其中：
 
-| 阶段 | 含义 |
-|---|---|
-| token id | 离散编号，只是索引 |
-| embedding table | 把 token id 映射为向量的参数表 |
-| token embedding | token 的初始静态向量表示 |
-| attention / transformer blocks | 让 token 表示吸收上下文 |
-| hidden state | 上下文相关的 token 表示 |
-| logits | 对下一个 token 的预测分数 |
+| 阶段                             | 含义                   |
+| ------------------------------ | -------------------- |
+| token id                       | 离散编号，只是索引            |
+| embedding table                | 把 token id 映射为向量的参数表 |
+| token embedding                | token 的初始静态向量表示      |
+| attention / transformer blocks | 让 token 表示吸收上下文      |
+| hidden state                   | 上下文相关的 token 表示      |
+| logits                         | 对下一个 token 的预测分数     |
 
 对 Agent Runtime 来说，理解这条链路很重要，因为它解释了：
 
