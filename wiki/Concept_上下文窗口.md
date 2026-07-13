@@ -3,9 +3,9 @@ type: concept
 title: 上下文窗口
 tags: [context-window, inference, week1]
 depends_on: []
-required_by: ["[[Concept_长上下文信息利用]]"]
-sources: ["[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]"]
-timestamp: 2026-07-10
+required_by: ["[[Concept_长上下文信息利用]]", "[[Concept_检索增强生成]]"]
+sources: ["[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]", "[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]"]
+timestamp: 2026-07-12
 understanding: working
 ---
 
@@ -31,4 +31,4 @@ understanding: working
 ## 理解演进
 
 - [2026-07-10] 初始理解（来源：[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]）：上下文窗口是容量上限；长上下文系统还必须验证模型对不同位置的信息利用是否稳定。
-
+- [2026-07-12] 深化（来源：[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]）：RAG 将检索段落与当前输入一起交给生成器，因此检索并未绕开窗口约束；段落数量、长度、排序和拼装仍是影响质量、延迟与成本的运行时选择。

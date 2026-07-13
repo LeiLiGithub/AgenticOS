@@ -3,9 +3,9 @@ type: concept
 title: 长上下文信息利用
 tags: [long-context, RAG, evaluation, week1]
 depends_on: ["[[Concept_上下文窗口]]"]
-required_by: []
-sources: ["[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]"]
-timestamp: 2026-07-10
+required_by: ["[[Concept_检索增强生成]]"]
+sources: ["[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]", "[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]"]
+timestamp: 2026-07-12
 understanding: working
 ---
 
@@ -35,4 +35,4 @@ understanding: working
 ## 理解演进
 
 - [2026-07-10] 初始理解（来源：[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]）：长上下文质量要看“相关证据位于不同位置时的性能差”，而非只看最大窗口或把更多文档塞入 prompt。
-
+- [2026-07-12] 深化（来源：[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]）：RAG 的 top-K 是模型和任务相关的取舍：原论文中增加 K 对 RAG-Sequence 的 NQ 有益，但 RAG-Token 约在 K=10 达峰。候选召回变多不保证生成器对新增上下文的利用更好。

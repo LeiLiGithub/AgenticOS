@@ -3,9 +3,9 @@ type: concept
 title: 词嵌入
 tags: [embedding, representation-learning, week1]
 depends_on: ["[[Concept_WordToken与WordType]]"]
-required_by: ["[[Concept_分布式语义]]", "[[Concept_上下文化词表示]]"]
-sources: ["[[raw/Contextual Word Representations A Contextual Introduction.pdf]]"]
-timestamp: 2026-07-10
+required_by: ["[[Concept_分布式语义]]", "[[Concept_上下文化词表示]]", "[[Concept_稠密检索]]"]
+sources: ["[[raw/Contextual Word Representations A Contextual Introduction.pdf]]", "[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]"]
+timestamp: 2026-07-12
 understanding: working
 ---
 
@@ -35,4 +35,4 @@ NLP 任务通常需要从有限样本泛化。若只使用离散 ID，模型很�
 ## 理解演进
 
 - [2026-07-10] 初始理解（来源：[[raw/Contextual Word Representations A Contextual Introduction.pdf]]）：embedding 解决的是离散 ID 无法表达和共享相似性的局限；它是语言模型输入表示的起点，不是模型已结合上下文后的最终理解。
-
+- [2026-07-12] 深化（来源：[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]）：连续向量也可用于把 query 与文档放进可检索的共同空间；这与模型输入的 token embedding 相关但不是同一对象，文档向量的相似度只负责候选召回，不能代替事实核验。
