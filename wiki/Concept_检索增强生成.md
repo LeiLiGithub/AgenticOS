@@ -3,8 +3,8 @@ type: concept
 title: 检索增强生成
 tags: [RAG, retrieval, memory, agent-runtime, week1]
 depends_on: ["[[Concept_稠密检索]]", "[[Concept_上下文窗口]]", "[[Concept_长上下文信息利用]]"]
-required_by: []
-sources: ["[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]"]
+required_by: ["[[Concept_上下文工程]]"]
+sources: ["[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]", "[[raw/Anthropic Effective Context Engineering for AI Agents.html]]"]
 timestamp: 2026-07-12
 understanding: working
 ---
@@ -43,7 +43,9 @@ understanding: working
 - RAG 不等于长期 Memory。它解决的是当前请求如何从外部知识取回文本；跨会话保存用户偏好、任务进度、写入策略、冲突处理和权限仍属于 Memory／State 系统。
 - top-K、chunk 长度、重排、上下文拼装和模型窗口会共同影响结果。检索更多段落会改变 recall、延迟、成本和 reader 可用性，必须以目标模型与真实任务评测。
 - 本文的实验基于 2018 Wikipedia、DPR 和 BART；它说明架构原理与早期实证结果，不构成对当前模型、企业数据源或生产配置的性能承诺。
+- 预先向量检索不是唯一模式。动态环境可保留路径、链接或查询等轻量引用，再由 Agent 运行时通过工具逐步读取；实践中可与预先召回组合，见 [[Concept_上下文工程]]。
 
 ## 理解演进
 
 - [2026-07-12] 初始理解（来源：[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]）：RAG 的关键不只是“检索后拼接”，而是在检索候选与生成概率之间建立可学习的概率连接；其可更新性来自外部索引，但可信性仍需额外的证据与系统治理。
+- [2026-07-16] 深化（来源：[[raw/Anthropic Effective Context Engineering for AI Agents.html]]）：检索方式可从预先向量召回扩展为运行时按需探索。其工程价值在于渐进披露动态环境，而代价是更高的工具调用延迟和更强的工具设计要求。

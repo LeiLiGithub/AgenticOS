@@ -3,8 +3,8 @@ type: concept
 title: 上下文窗口
 tags: [context-window, inference, week1]
 depends_on: []
-required_by: ["[[Concept_长上下文信息利用]]", "[[Concept_检索增强生成]]"]
-sources: ["[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]", "[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]"]
+required_by: ["[[Concept_长上下文信息利用]]", "[[Concept_检索增强生成]]", "[[Concept_上下文工程]]", "[[Concept_Agent记忆]]"]
+sources: ["[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]", "[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]", "[[raw/Anthropic Effective Context Engineering for AI Agents.html]]"]
 timestamp: 2026-07-12
 understanding: working
 ---
@@ -27,8 +27,10 @@ understanding: working
 - 输入更长通常会带来更多 prefill 计算、KV Cache 占用、延迟和成本。
 - 上下文仅在当前调用有效；跨会话的保存、检索、更新和冲突处理属于 Memory / State 系统。
 - “支持 N token”不能脱离模型版本、prompt 模板、任务和评测指标比较。
+- 对 Agent 而言，窗口中的 token 应被视为需要选择和组织的运行时预算，而非应被历史记录填满的容器，见 [[Concept_上下文工程]]。
 
 ## 理解演进
 
 - [2026-07-10] 初始理解（来源：[[raw/Lost in the Middle How Language Models Use Long Contexts.pdf]]）：上下文窗口是容量上限；长上下文系统还必须验证模型对不同位置的信息利用是否稳定。
 - [2026-07-12] 深化（来源：[[raw/Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf]]）：RAG 将检索段落与当前输入一起交给生成器，因此检索并未绕开窗口约束；段落数量、长度、排序和拼装仍是影响质量、延迟与成本的运行时选择。
+- [2026-07-16] 深化（来源：[[raw/Anthropic Effective Context Engineering for AI Agents.html]]）：窗口管理不仅是容量控制，还包括每轮推理前的选择、压缩与组织；应优先保留对当前目标有高信号的内容。

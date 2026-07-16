@@ -24,3 +24,11 @@
 - 新增概念页：Concept_检索增强生成、Concept_稠密检索
 - 更新概念页：Concept_词嵌入（区分 token embedding 与检索向量）、Concept_上下文窗口（检索仍受上下文装配约束）、Concept_长上下文信息利用（top-K 的任务相关取舍）
 - 说明：论文基于 DPR、BART 与 2018 Wikipedia；保留“检索候选不等于可验证引用”“RAG 不等于 Agent 长期记忆”的边界，未把其早期分数或 K 值写成现代生产默认值。
+
+## [2026-07-16] ingest | Effective context engineering for AI agents
+- 深度：standard
+- 原始快照：[[raw/Anthropic Effective Context Engineering for AI Agents.html]]
+- 触达页面：Source_EffectiveContextEngineering、Concept_上下文工程、Concept_Agent记忆、Concept_上下文窗口、Concept_检索增强生成、Concept_长上下文信息利用、index
+- 新增概念页：Concept_上下文工程、Concept_Agent记忆
+- 更新概念页：Concept_上下文窗口（把窗口视为需管理的运行时预算）、Concept_检索增强生成（预先召回与按需探索的取舍）、Concept_长上下文信息利用（压缩、笔记、子 Agent 的工程关系）
+- 说明：本文是 Anthropic 的工程经验文章，不把 Claude Code 的具体工具模式或产品行为视为跨模型的普适结论；保留“Context Window、RAG、Memory / State”彼此不等同的边界。
